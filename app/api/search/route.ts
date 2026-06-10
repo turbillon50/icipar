@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server'
 import { searchAll } from '@/lib/db'
 
+export const dynamic = 'force-dynamic'
+
 export async function GET(req: Request) {
   const url = new URL(req.url)
   const q = url.searchParams.get('q') || ''
@@ -8,7 +10,7 @@ export async function GET(req: Request) {
   try {
     const results = await searchAll(q)
     return NextResponse.json(results)
-  } catch (e) {
+  } catch {
     return NextResponse.json({ error: 'DB error' }, { status: 500 })
   }
 }
