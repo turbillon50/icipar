@@ -1,6 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
-import { Cross } from '@/components/Icon'
+
 
 export default function SplashScreen() {
   return (
@@ -11,7 +11,7 @@ export default function SplashScreen() {
       <div className="absolute top-0 left-0 right-0 h-px shimmer-gold" />
       <motion.div initial={{ scale: 0.3, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
-        className="text-7xl mb-6" style={{ color: 'var(--brand)' }}><Cross /></motion.div>
+        className="mb-6"><img src="/logo.png" alt="ICIPAR" className="w-28 h-28 rounded-full object-cover shadow-2xl" /></motion.div>
       <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }} className="font-serif text-5xl gold-text font-bold mb-3">ICIPAR</motion.h1>
       <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }}

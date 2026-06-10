@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Search, Clock, Church, Download, ChevronRight, Star, Archive, Cross } from '@/components/Icon'
+import { Search, Clock, Church, Download, ChevronRight, Star, Archive } from '@/components/Icon'
 import ModeSwitcher from '@/components/ModeSwitcher'
 import SplashScreen from '@/components/SplashScreen'
 
@@ -44,7 +44,7 @@ export default function HomePage() {
         </div>
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
           <motion.div initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.3 }}
-            className="text-6xl mb-6 animate-float inline-block" style={{ color: 'var(--brand)' }}><Cross /></motion.div>
+            className="mb-6 animate-float inline-block"><img src="/logo.png" alt="ICIPAR" className="w-24 h-24 rounded-full object-cover shadow-2xl" /></motion.div>
           <motion.h1 initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.8 }}
             className="font-serif text-5xl md:text-7xl mb-6 leading-tight"><span className="gold-text">ICIPAR</span></motion.h1>
           <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7, duration: 0.8 }}

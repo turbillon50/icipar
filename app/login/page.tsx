@@ -3,7 +3,7 @@ import { useState, Suspense } from 'react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { motion } from 'framer-motion'
-import { Cross, ChevronRight, ArrowLeft } from '@/components/Icon'
+import { ChevronRight, ArrowLeft } from '@/components/Icon'
 
 function LoginInner() {
   const params = useSearchParams()
@@ -20,7 +20,7 @@ function LoginInner() {
           <ArrowLeft /> Volver al inicio
         </Link>
         <div className="flex items-center gap-3 mb-2">
-          <span className="text-2xl" style={{ color: 'var(--brand)' }}><Cross /></span>
+          <img src="/logo.png" alt="ICIPAR" className="w-10 h-10 rounded-full object-cover" />
           <span className="font-serif text-2xl gold-text font-bold">ICIPAR</span>
         </div>
         <h1 className="font-serif text-2xl mb-1 text-white">Crea tu cuenta</h1>

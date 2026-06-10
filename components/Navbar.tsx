@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
-import { Menu, X, Cross } from '@/components/Icon'
+import { Menu, X } from '@/components/Icon'
 
 interface Props { variant?: 'app' | 'admin' }
 const APP_LINKS = [
@@ -34,7 +34,7 @@ export default function Navbar({ variant = 'app' }: Props) {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'py-3 glass-card' : 'py-5 bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <Link href={variant === 'admin' ? '/admin' : '/app'} className="flex items-center gap-3">
-          <span className="text-xl" style={{ color: 'var(--brand)' }}><Cross /></span>
+          <img src="/logo.png" alt="ICIPAR" className="w-8 h-8 rounded-full object-cover" />
           <span className="font-serif text-xl gold-text font-bold">ICIPAR</span>
           {variant === 'admin' && (
             <span className="text-xs px-2 py-0.5 rounded-full" style={{ color: 'var(--accent)', border: '1px solid color-mix(in srgb,var(--accent) 40%,transparent)' }}>Admin</span>
