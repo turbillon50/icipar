@@ -1,13 +1,13 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { Plus, Edit, Calendar, Tag } from 'lucide-react'
+import { Plus, Edit, Calendar, Tag } from '@/components/Icon'
 import Link from 'next/link'
 
 interface Event { id:number; title:string; event_date:string; category:string; church_name:string }
 
 const CATEGORY_COLORS: Record<string,string> = {
-  'Fundación':'#C9A84C','Avivamiento':'#F87171','Construcción':'#60A5FA',
+  'Fundación':'#5B47C7','Avivamiento':'#F87171','Construcción':'#60A5FA',
   'Misiones':'#34D399','Conferencia':'#A78BFA','Aniversario':'#FBBF24','Patrimonio':'#FB923C'
 }
 
@@ -42,15 +42,15 @@ export default function AdminEvents() {
               initial={{opacity:0,y:10}} animate={{opacity:1,y:0}} transition={{delay:i*0.06}}
               className="parchment-card rounded-2xl p-5 flex items-center gap-4">
               <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                style={{background:`${CATEGORY_COLORS[e.category]||'#C9A84C'}18`}}>
-                <Calendar className="w-5 h-5" style={{color:CATEGORY_COLORS[e.category]||'#C9A84C'}}/>
+                style={{background:`${CATEGORY_COLORS[e.category]||'#5B47C7'}18`}}>
+                <Calendar className="w-5 h-5" style={{color:CATEGORY_COLORS[e.category]||'#5B47C7'}}/>
               </div>
               <div className="flex-1 min-w-0">
                 <h3 className="text-white font-medium truncate">{e.title}</h3>
                 <div className="flex flex-wrap gap-3 mt-1 text-xs text-stone-500">
                   <span>{e.church_name}</span>
                   <span>{new Date(e.event_date).getFullYear()}</span>
-                  <span className="flex items-center gap-1" style={{color:CATEGORY_COLORS[e.category]||'#C9A84C'}}>
+                  <span className="flex items-center gap-1" style={{color:CATEGORY_COLORS[e.category]||'#5B47C7'}}>
                     <Tag className="w-3 h-3"/>{e.category}
                   </span>
                 </div>

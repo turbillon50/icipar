@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { MapPin, Calendar, ChevronRight } from 'lucide-react'
+import { MapPin, Calendar, ChevronRight } from '@/components/Icon'
 
 interface Church { id: number; name: string; denomination: string; city: string; state: string; founded_year: number; description: string }
 
@@ -46,7 +46,7 @@ export default function ChurchesPage() {
         {denominations.map(d => (
           <button key={d} onClick={() => setFilter(d)}
             className={`px-4 py-2 rounded-full text-sm transition-all ${filter===d ? 'text-stone-950 font-medium' : 'text-stone-400 border border-stone-700 hover:border-amber-600'}`}
-            style={filter===d ? { background: DENOMINATION_COLORS[d] || '#C9A84C' } : {}}>
+            style={filter===d ? { background: DENOMINATION_COLORS[d] || '#5B47C7' } : {}}>
             {d}
           </button>
         ))}
@@ -73,8 +73,8 @@ export default function ChurchesPage() {
                   <div className="absolute bottom-0 left-0 right-0 h-12"
                     style={{ background:'linear-gradient(to top,rgba(28,25,23,1),transparent)' }} />
                   <span className="absolute top-3 right-3 text-xs px-2 py-1 rounded-full"
-                    style={{ background:`${DENOMINATION_COLORS[c.denomination] || '#C9A84C'}25`,
-                             color: DENOMINATION_COLORS[c.denomination] || '#C9A84C' }}>
+                    style={{ background:`${DENOMINATION_COLORS[c.denomination] || '#5B47C7'}25`,
+                             color: DENOMINATION_COLORS[c.denomination] || '#5B47C7' }}>
                     {c.denomination}
                   </span>
                 </div>

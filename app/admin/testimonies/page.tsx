@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { Plus, Edit, Trash2 } from 'lucide-react'
+import { Plus, Edit, Trash2 } from '@/components/Icon'
 
 interface Testimony { id:number; author_name:string; content:string; year:number }
 

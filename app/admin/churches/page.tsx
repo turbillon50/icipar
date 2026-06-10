@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Plus, Edit, Eye, MapPin, Calendar } from 'lucide-react'
+import { Plus, Edit, Eye, MapPin, Calendar } from '@/components/Icon'
 
 interface Church { id:number; name:string; denomination:string; city:string; state:string; founded_year:number }
 
@@ -24,7 +24,7 @@ export default function AdminChurches() {
         <Link href="/admin/churches/new">
           <motion.button whileHover={{scale:1.05}} whileTap={{scale:0.97}}
             className="flex items-center gap-2 px-5 py-3 rounded-2xl font-medium text-stone-950"
-            style={{background:'linear-gradient(135deg,#C9A84C,#E8C96D)'}}>
+            style={{background:'linear-gradient(135deg,#5B47C7,#7E6BE0)'}}>
             <Plus className="w-4 h-4" /> Nueva Iglesia
           </motion.button>
         </Link>

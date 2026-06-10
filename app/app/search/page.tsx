@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Search, Church, Calendar, X } from 'lucide-react'
+import { Search, Church, Calendar, X } from '@/components/Icon'
 
 interface Result { type:string; id:string; title:string; subtitle:string; event_date?:string }
 

@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Church, Calendar, BookOpen, Search, Clock, TrendingUp } from 'lucide-react'
+import { Church, Calendar, BookOpen, Search, Clock, TrendingUp } from '@/components/Icon'
 
 interface Church { id: number; name: string; denomination: string; city: string; founded_year: number }
 interface Event { id: number; title: string; event_date: string; category: string; church_name: string }
@@ -37,7 +37,7 @@ export default function AppDashboard() {
       <motion.div initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }} transition={{ delay:0.1 }}
         className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
         {[
-          { icon: Church, label: 'Ver Iglesias', href: '/app/churches', color: '#C9A84C' },
+          { icon: Church, label: 'Ver Iglesias', href: '/app/churches', color: '#5B47C7' },
           { icon: Clock, label: 'Línea de Tiempo', href: '/app/timeline', color: '#A78BFA' },
           { icon: Search, label: 'Buscar', href: '/app/search', color: '#34D399' },
           { icon: BookOpen, label: 'Testimonios', href: '/app/testimonies', color: '#F87171' },

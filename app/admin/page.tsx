@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Church, Calendar, MessageSquare, Users, TrendingUp, Plus, Settings, Database } from 'lucide-react'
+import { Church, Calendar, MessageSquare, Users, TrendingUp, Plus, Settings, Database } from '@/components/Icon'
 
 interface Stats { churches: number; events: number; testimonies: number }
 
@@ -21,14 +21,14 @@ export default function AdminDashboard() {
   }, [])
 
   const STAT_CARDS = [
-    { icon: Church, label:'Iglesias registradas', value: stats.churches, color:'#C9A84C', href:'/admin/churches' },
+    { icon: Church, label:'Iglesias registradas', value: stats.churches, color:'#5B47C7', href:'/admin/churches' },
     { icon: Calendar, label:'Eventos documentados', value: stats.events, color:'#A78BFA', href:'/admin/events' },
     { icon: MessageSquare, label:'Testimonios', value: stats.testimonies, color:'#34D399', href:'/admin/testimonies' },
     { icon: Users, label:'Usuarios admin', value: 2, color:'#F87171', href:'/admin/users' },
   ]
 
   const ACTIONS = [
-    { icon: Plus, label:'Nueva Iglesia', href:'/admin/churches/new', color:'#C9A84C' },
+    { icon: Plus, label:'Nueva Iglesia', href:'/admin/churches/new', color:'#5B47C7' },
     { icon: Calendar, label:'Nuevo Evento', href:'/admin/events/new', color:'#A78BFA' },
     { icon: MessageSquare, label:'Nuevo Testimonio', href:'/admin/testimonies/new', color:'#34D399' },
     { icon: Database, label:'Exportar Datos', href:'#', color:'#60A5FA' },
@@ -97,7 +97,7 @@ export default function AdminDashboard() {
         <h2 className="font-serif text-xl text-white mb-5">Actividad Reciente</h2>
         <div className="space-y-4">
           {[
-            { action:'Iglesia registrada', item:'Centro Cristiano Nueva Vida Tijuana', time:'Hace 2 días', color:'#C9A84C' },
+            { action:'Iglesia registrada', item:'Centro Cristiano Nueva Vida Tijuana', time:'Hace 2 días', color:'#5B47C7' },
             { action:'Evento documentado', item:'Archivo Fotográfico Digitalizado — Oaxaca', time:'Hace 3 días', color:'#A78BFA' },
             { action:'Testimonio añadido', item:'Dr. Carlos Mendoza — Historiador', time:'Hace 5 días', color:'#34D399' },
             { action:'Iglesia actualizada', item:'Primera Iglesia Bautista de Guadalajara', time:'Hace 1 semana', color:'#F87171' },

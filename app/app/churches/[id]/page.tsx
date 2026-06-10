@@ -3,14 +3,14 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { MapPin, Calendar, ArrowLeft, Clock, MessageSquare, Tag } from 'lucide-react'
+import { MapPin, Calendar, ArrowLeft, Clock, MessageSquare, Tag } from '@/components/Icon'
 
 interface Church { id:number; name:string; denomination:string; city:string; state:string; founded_year:number; description:string }
 interface Event { id:number; title:string; description:string; event_date:string; category:string; tags:string[] }
 interface Testimony { id:number; author_name:string; content:string; year:number }
 
 const CAT: Record<string,string> = {
-  'Fundacion':'#C9A84C','Avivamiento':'#F87171','Construccion':'#60A5FA',
+  'Fundacion':'#5B47C7','Avivamiento':'#F87171','Construccion':'#60A5FA',
   'Misiones':'#34D399','Conferencia':'#A78BFA','Aniversario':'#FBBF24','Patrimonio':'#FB923C'
 }
 
@@ -32,7 +32,7 @@ export default function ChurchDetail() {
   )
 
   const { church, events, testimonies } = data
-  const catColor = (c: string) => CAT[c] || '#C9A84C'
+  const catColor = (c: string) => CAT[c] || '#5B47C7'
 
   return (
     <div className="min-h-screen">
@@ -49,13 +49,13 @@ export default function ChurchDetail() {
           </Link>
           <motion.div initial={{ opacity:0, y:30 }} animate={{ opacity:1, y:0 }}>
             <span className="text-xs px-3 py-1 rounded-full mb-3 inline-block"
-              style={{ background:'rgba(201,168,76,0.15)', color:'#C9A84C' }}>
+              style={{ background:'rgba(201,168,76,0.15)', color:'#5B47C7' }}>
               {church.denomination}
             </span>
             <h1 className="font-serif text-white mb-3" style={{fontSize:'clamp(1.5rem,4vw,3rem)'}}>{church.name}</h1>
             <div className="flex gap-4 text-stone-400 text-sm flex-wrap">
-              <span className="flex items-center gap-1"><MapPin className="w-4 h-4" style={{color:'#C9A84C'}} />{church.city}, {church.state}</span>
-              <span className="flex items-center gap-1"><Calendar className="w-4 h-4" style={{color:'#C9A84C'}} />Fundada {church.founded_year}</span>
+              <span className="flex items-center gap-1"><MapPin className="w-4 h-4" style={{color:'#5B47C7'}} />{church.city}, {church.state}</span>
+              <span className="flex items-center gap-1"><Calendar className="w-4 h-4" style={{color:'#5B47C7'}} />Fundada {church.founded_year}</span>
             </div>
           </motion.div>
         </div>
@@ -64,7 +64,7 @@ export default function ChurchDetail() {
       <div className="max-w-7xl mx-auto px-6 py-10">
         <motion.p initial={{ opacity:0 }} animate={{ opacity:1 }} transition={{ delay:0.2 }}
           className="text-stone-300 leading-relaxed mb-10 text-lg max-w-3xl font-serif italic"
-          style={{borderLeft:'2px solid #B45309', paddingLeft:'1.25rem'}}>
+          style={{borderLeft:'2px solid #E07A5F', paddingLeft:'1.25rem'}}>
           {church.description}
         </motion.p>
 
@@ -76,7 +76,7 @@ export default function ChurchDetail() {
             <button key={t.id} onClick={() => setTab(t.id)}
               className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-all"
               style={tab===t.id
-                ? {background:'linear-gradient(135deg,#C9A84C,#E8C96D)', color:'#0C0A09'}
+                ? {background:'linear-gradient(135deg,#5B47C7,#7E6BE0)', color:'#0C0A09'}
                 : {color:'#A8A29E'}}>
               <t.icon className="w-4 h-4" />
               {t.label}
@@ -127,10 +127,10 @@ export default function ChurchDetail() {
               <motion.div key={t.id}
                 initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }} transition={{ delay:i*0.1 }}
                 className="parchment-card rounded-2xl p-6">
-                <div className="text-4xl opacity-20 font-serif leading-none mb-3" style={{color:'#C9A84C'}}>"</div>
+                <div className="text-4xl opacity-20 font-serif leading-none mb-3" style={{color:'#5B47C7'}}>"</div>
                 <p className="text-stone-300 text-sm leading-relaxed mb-4 italic">{t.content}</p>
                 <div className="flex items-center justify-between">
-                  <p className="text-sm font-medium" style={{color:'#C9A84C'}}>{t.author_name}</p>
+                  <p className="text-sm font-medium" style={{color:'#5B47C7'}}>{t.author_name}</p>
                   <span className="gold-text font-serif text-lg">{t.year}</span>
                 </div>
               </motion.div>

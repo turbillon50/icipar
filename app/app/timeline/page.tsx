@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 interface Event { id:number; title:string; description:string; event_date:string; category:string; church_name:string; denomination:string }
 
 const CATEGORY_COLORS: Record<string,string> = {
-  'Fundación':'#C9A84C','Avivamiento':'#F87171','Construcción':'#60A5FA',
+  'Fundación':'#5B47C7','Avivamiento':'#F87171','Construcción':'#60A5FA',
   'Misiones':'#34D399','Conferencia':'#A78BFA','Aniversario':'#FBBF24','Patrimonio':'#FB923C'
 }
 
@@ -43,7 +43,7 @@ export default function TimelinePage() {
         <div className="relative">
           {/* Central line */}
           <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px"
-            style={{background:'linear-gradient(to bottom,transparent,#C9A84C 10%,#C9A84C 90%,transparent)'}} />
+            style={{background:'linear-gradient(to bottom,transparent,#5B47C7 10%,#5B47C7 90%,transparent)'}} />
 
           {Object.entries(byDecade).sort().map(([decade, decadeEvents], di) => (
             <div key={decade} className="mb-12">
@@ -72,8 +72,8 @@ export default function TimelinePage() {
                       </div>
                       <div className="flex items-start gap-2 mb-2">
                         <span className="text-xs px-2 py-0.5 rounded-full flex-shrink-0"
-                          style={{background:`${CATEGORY_COLORS[e.category]||'#C9A84C'}20`,
-                                  color:CATEGORY_COLORS[e.category]||'#C9A84C'}}>
+                          style={{background:`${CATEGORY_COLORS[e.category]||'#5B47C7'}20`,
+                                  color:CATEGORY_COLORS[e.category]||'#5B47C7'}}>
                           {e.category}
                         </span>
                         <span className="gold-text font-serif font-bold text-sm ml-auto">
