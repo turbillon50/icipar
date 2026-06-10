@@ -1,9 +1,10 @@
 import { NextResponse } from 'next/server'
 import { getChurch, getEvents, getTestimonies } from '@/lib/db'
 
-export async function GET(req: Request, { params }: { params: { id: string } }) {
+export async function GET(req: Request, context: { params: Promise<{ id: string }> }) {
   try {
-    const id = parseInt(params.id)
+    const { id: idStr } = await context.params
+    const id = parseInt(idStr)
     const [church, events, testimonies] = await Promise.all([
       getChurch(id),
       getEvents(id),
